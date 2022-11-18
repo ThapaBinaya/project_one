@@ -8,13 +8,13 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1>DataTables</h1>
-                        <a href="{{url('/about/create')}}" class="btn btn-primary" role="button" aria-pressed="true">Create About US</a>
+                        <h1>MenuTables</h1>
+                        <a href="{{url('/menu/create')}}" class="btn btn-primary" role="button" aria-pressed="true">Create About US</a>
                     </div>
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
                             <li class="breadcrumb-item"><a href="#">Home</a></li>
-                            <li class="breadcrumb-item active">DataTables</li>
+                            <li class="breadcrumb-item active">MenuTables</li>
                         </ol>
                     </div>
                 </div>
@@ -28,7 +28,7 @@
                     <div class="col-12">
                         <div class="card">
                             <div class="card-header">
-                                <h3 class="card-title">DataTable with minimal features & hover style</h3>
+                                <h3 class="card-title">MenuTable with minimal features & hover style</h3>
 
                             </div>
                             <!-- /.card-header -->
@@ -37,23 +37,23 @@
                                     <thead>
                                     <tr>
                                         <th>S.N</th>
-                                        <th>Title</th>
-                                        <th>Excerpt</th>
-                                        <th>Status</th>
+                                        <th>Menu 1</th>
+                                        <th>Menu 2</th>
+                                        <th>Menu 3</th>
                                         <th>Action</th>
                                     </thead>
                                     <tbody>
-                                    @foreach($abouts as $about)
+                                    @foreach($menus as $menu)
                                     <tr>
                                         <td>{{$loop->iteration}}</td>
-                                        <td>{{$about->title}}</td>
-                                        <td>{!! $about->excerpt !!}</td>
-                                        <td>{!!$about->status ? '<span class="badge badge-success">Active</span>' : '<span class="badge badge-danger">InActive</span>' !!}</td>
+                                        <td>{{$menu->menu1}}</td>
+                                        <td>{{$menu->menu2}}</td>
+                                        <td>{{$menu->menu3}}</td>
                                         <td>
-                                            <a class="btn btn-primary" href="{{ route('about.edit', $about->id) }}">
+                                            <a class="btn btn-primary" href="{{ route('menu.edit', $menu->id) }}">
                                                 <i class="fa fa-edit"></i>
                                             </a>
-                                                <form action="{{ route('about.destroy', $about->id) }}" method="post">
+                                                <form action="{{ route('menu.destroy', $menu->id) }}" method="post">
                                                     @csrf
                                                     @method('DELETE')
                                                     <button type="submit" class="btn btn-danger"><i class="fa fa-trash"></i></button>
@@ -63,7 +63,7 @@
                                     @endforeach
                                     </tbody>
                                 </table>
-                                {!! $abouts->links() !!}
+                                {!! $menus->links() !!}
                             </div>
                             <!-- /.card-body -->
                         </div>

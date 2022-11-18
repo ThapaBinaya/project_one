@@ -8,12 +8,12 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1>General Form</h1>
+                        <h1>Blog Edit</h1>
                     </div>
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
-                            <li class="breadcrumb-item"><a href="#">Home</a></li>
-                            <li class="breadcrumb-item active">General Form</li>
+                            <li class="breadcrumb-item"><a href="{{url('/index')}}">Home</a></li>
+                            <li class="breadcrumb-item active">Blog Edit</li>
                         </ol>
                     </div>
                 </div>
@@ -33,8 +33,9 @@
                             </div>
                             <!-- /.card-header -->
                             <!-- form start -->
-                            <form action="{{route('slider.store') }}" method="post" enctype="multipart/form-data">
+                            <form action="{{route('blog.update', $data['row']->id) }}" method="post" enctype="multipart/form-data">
                                 @csrf
+                                @method('PUT')
                                 @if ($errors->any())
                                     <div class="alert alert-danger">
                                         There were some problems with your input.<br><br>
@@ -47,22 +48,29 @@
                                 @endif
                                 <div class="card-body">
                                     <div class="form-group">
-{{--                                        {{ $errors }}--}}
                                         <label for="title">Title</label>
-                                        <input type="text" name="title" class="form-control" id="title" placeholder="Title">
+                                        <input type="text" name="title" value="{{isset($data['row'])?$data['row']->title:''}}" class="form-control" placeholder="Title">
                                     </div>
                                     <div class="form-group">
-                                        <label for="alt_text">Alt Text</label>
-                                        <input type="text" name="alt_text" class="form-control" id="alt_text" placeholder="Enter Alt Text">
+                                        <label for="author">Author</label>
+                                        <input type="text" name="author" value="{{isset($data['row'])?$data['row']->author:''}}" class="form-control" placeholder="Author">
                                     </div>
                                     <div class="form-group">
-                                        <label for="main_photo">Choose Photo</label>
-                                        <input type="file" name="main_photo" class="form-control" id="main_photo" placeholder="photo">
+                                        <label for="date">Date</label>
+                                        <input type="date" name="date" value="{{isset($data['row'])?$data['row']->date:''}}" class="form-control" placeholder="Date">
                                     </div>
-
+                                    <div class="form-group">
+                                        <label for="desc">Description</label>
+                                        <textarea id="summernote" name="desc" class="form-control" rows="10">{{isset($data['row'])?$data['row']->desc:''}}</textarea>
+                                    </div>
+                                    <div class="form-group">
+                                        <img width="100px" height="100px" src="{{asset('images/blog/'.$data['row']->image)}}">
+                                        <label for="image">Image</label>
+                                        <input type="file" name="main_image" class="form-control">
+                                    </div>
                                     <div class="form-group">
                                         <label for="">Status:</label>
-                                        <select name="status">
+                                        <select name="status" class="form-control">
                                             <option value=" ">Select Status</option>
                                             <option value="1">Active</option>
                                             <option value="0">InActive</option>
@@ -70,7 +78,6 @@
                                     </div>
                                 </div>
                                 <!-- /.card-body -->
-
                                 <div class="card-footer">
                                     <button type="submit" class="btn btn-primary">Submit</button>
                                 </div>
@@ -85,4 +92,10 @@
         </section>
         <!-- /.content -->
     </div>
+
+    <script>
+        $(document).ready(function() {
+            $('#summernote').summernote();
+        });
+    </script>
 @endsection

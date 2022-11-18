@@ -8,12 +8,12 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1>General Form</h1>
+                        <h1>Blog Form</h1>
                     </div>
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
                             <li class="breadcrumb-item"><a href="#">Home</a></li>
-                            <li class="breadcrumb-item active">General Form</li>
+                            <li class="breadcrumb-item active">Blog Form</li>
                         </ol>
                     </div>
                 </div>
@@ -33,7 +33,7 @@
                             </div>
                             <!-- /.card-header -->
                             <!-- form start -->
-                            <form action="{{route('slider.store') }}" method="post" enctype="multipart/form-data">
+                            <form action="{{route('blog.store') }}" method="post" enctype="multipart/form-data">
                                 @csrf
                                 @if ($errors->any())
                                     <div class="alert alert-danger">
@@ -47,22 +47,28 @@
                                 @endif
                                 <div class="card-body">
                                     <div class="form-group">
-{{--                                        {{ $errors }}--}}
                                         <label for="title">Title</label>
-                                        <input type="text" name="title" class="form-control" id="title" placeholder="Title">
+                                        <input type="text" name="title" class="form-control" placeholder="Title">
                                     </div>
                                     <div class="form-group">
-                                        <label for="alt_text">Alt Text</label>
-                                        <input type="text" name="alt_text" class="form-control" id="alt_text" placeholder="Enter Alt Text">
+                                        <label for="author">Author</label>
+                                        <input type="text" name="author" class="form-control" placeholder="Author">
                                     </div>
                                     <div class="form-group">
-                                        <label for="main_photo">Choose Photo</label>
-                                        <input type="file" name="main_photo" class="form-control" id="main_photo" placeholder="photo">
+                                        <label for="date">Date</label>
+                                        <input type="date" name="date" class="form-control" placeholder="Date">
                                     </div>
-
+                                    <div class="form-group">
+                                        <label for="desc">Description</label>
+                                        <textarea id="summernote" name="desc" class="form-control" rows="10"></textarea>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="main_image">Image</label>
+                                        <input type="file" name="main_image" class="form-control" placeholder="Image">
+                                    </div>
                                     <div class="form-group">
                                         <label for="">Status:</label>
-                                        <select name="status">
+                                        <select name="status" class="form-control">
                                             <option value=" ">Select Status</option>
                                             <option value="1">Active</option>
                                             <option value="0">InActive</option>
@@ -70,7 +76,6 @@
                                     </div>
                                 </div>
                                 <!-- /.card-body -->
-
                                 <div class="card-footer">
                                     <button type="submit" class="btn btn-primary">Submit</button>
                                 </div>
@@ -85,4 +90,10 @@
         </section>
         <!-- /.content -->
     </div>
+
+    <script>
+        $(document).ready(function() {
+            $('#summernote').summernote();
+        });
+    </script>
 @endsection

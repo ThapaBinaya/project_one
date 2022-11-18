@@ -36,7 +36,16 @@
                             <form action="{{route('slider.update', $data['row']->id) }}" method="post" enctype="multipart/form-data">
                                 @csrf
                                 @method('PUT')
-                                {{ $errors }}
+                                @if ($errors->any())
+                                    <div class="alert alert-danger">
+                                        There were some problems with your input.<br><br>
+                                        <ul>
+                                            @foreach ($errors->all() as $error)
+                                                <li>{{ $error }}</li>
+                                            @endforeach
+                                        </ul>
+                                    </div>
+                                @endif
                                 <div class="card-body">
                                     <div class="form-group">
 {{--                                        {{ $errors }}--}}
@@ -48,15 +57,18 @@
                                         <input type="text" name="alt_text" class="form-control" value="{{isset($data['row'])?$data['row']->alt_text:''}}" id="alt_text" placeholder="Enter Alt Text">
                                     </div>
                                     <div class="form-group">
-                                        <img width="100px" height="100px" src="{{asset('images/'.$data['row']->photo)}}" alt="{{$data['row']['alt_text']}}">
+                                        <img width="100px" height="100px" src="{{asset('images/slider/'.$data['row']->photo)}}" alt="{{$data['row']['alt_text']}}">
                                         <label for="photo">Photo</label>
                                         <input type="file" name="main_photo" class="form-control" id="photo">
                                     </div>
 
                                     <div class="form-group">
-                                        <label for="status">Status</label>
-{{--                                        <input type="text" name="subject" class="form-control" id="exampleInputPassword1" placeholder="Subject">--}}
-                                        <input type="checkbox" name="status" id="status">
+                                        <label for="">Status:</label>
+                                        <select name="status">
+                                            <option value=" ">Select Status</option>
+                                            <option value="1">Active</option>
+                                            <option value="0">InActive</option>
+                                        </select>
                                     </div>
                                 </div>
                                 <!-- /.card-body -->

@@ -27,6 +27,8 @@ Route::resource('user', \App\Http\Controllers\Admin\UserController::class);
 Route::get('siteSetting',                       [\App\Http\Controllers\Admin\SiteSettingController::class, 'edit'])->name('siteSetting.edit');
 Route::post('siteSetting/update',               [\App\Http\Controllers\Admin\SiteSettingController::class, 'update'])->name('siteSetting.update');
 
+Route::resource('/blog', \App\Http\Controllers\Admin\BlogController::class);
+
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

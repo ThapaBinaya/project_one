@@ -36,7 +36,16 @@
                             <form action="{{route('about.update', $data['row']->id) }}" method="post" enctype="multipart/form-data">
                                 @csrf
                                 @method('PUT')
-                                {{ $errors }}
+                                @if ($errors->any())
+                                    <div class="alert alert-danger">
+                                        There were some problems with your input.<br><br>
+                                        <ul>
+                                            @foreach ($errors->all() as $error)
+                                                <li>{{ $error }}</li>
+                                            @endforeach
+                                        </ul>
+                                    </div>
+                                @endif
                                 <div class="card-body">
                                     <div class="form-group">
 {{--                                        {{ $errors }}--}}
@@ -45,13 +54,15 @@
                                     </div>
                                     <div class="form-group">
                                         <label for="excerpt">Excerpt</label>
-                                        {{--                                        <input type="text" name="excerpt" class="form-control" value="{{isset($data['row'])?$data['row']->excerpt:''}}" id="excerpt" placeholder="Enter Alt Text">--}}
-                                        <textarea name="excerpt" cols="117" rows="5">{{isset($data['row'])?$data['row']->excerpt:''}}</textarea>
+                                        <textarea id="summernote" name="excerpt" class="form-control" rows="10">{{isset($data['row'])?$data['row']->excerpt:''}}</textarea>
                                     </div>
                                     <div class="form-group">
-                                        <label for="status">Status</label>
-{{--                                        <input type="text" name="subject" class="form-control" id="exampleInputPassword1" placeholder="Subject">--}}
-                                        <input type="checkbox" name="status" id="status">
+                                        <label for="">Status:</label>
+                                        <select name="status">
+                                            <option value=" ">Select Status</option>
+                                            <option value="1">Active</option>
+                                            <option value="0">InActive</option>
+                                        </select>
                                     </div>
                                 </div>
                                 <!-- /.card-body -->
@@ -70,4 +81,10 @@
         </section>
         <!-- /.content -->
     </div>
+
+    <script>
+        $(document).ready(function() {
+            $('#summernote').summernote();
+        });
+    </script>
 @endsection

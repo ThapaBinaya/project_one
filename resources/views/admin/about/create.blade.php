@@ -35,20 +35,29 @@
                             <!-- form start -->
                             <form action="{{route('about.store') }}" method="post" enctype="multipart/form-data">
                                 @csrf
-                                {{ $errors }}
+                                @if ($errors->any())
+                                    <div class="alert alert-danger">
+                                        There were some problems with your input.<br><br>
+                                        <ul>
+                                            @foreach ($errors->all() as $error)
+                                                <li>{{ $error }}</li>
+                                            @endforeach
+                                        </ul>
+                                    </div>
+                                @endif
                                 <div class="card-body">
                                     <div class="form-group">
-{{--                                        {{ $errors }}--}}
                                         <label for="title">Title</label>
                                         <input type="text" name="title" class="form-control" id="title" placeholder="Title">
                                     </div>
                                     <div class="form-group">
-                                        <label for="excerpt">Excerpt</label>
-                                        <textarea name="excerpt" id="excerpt" cols="117" rows="5"></textarea>
+                                        <label for="summernote">Excerpt</label>
+                                        <textarea id="summernote" name="excerpt" class="form-control" rows="10"></textarea>
                                     </div>
                                     <div class="form-group">
+                                        <label for="">Status:</label>
                                         <select name="status">
-                                            <option>Select Status</option>
+                                            <option value=" ">Select Status</option>
                                             <option value="1">Active</option>
                                             <option value="0">InActive</option>
                                         </select>
@@ -70,4 +79,10 @@
         </section>
         <!-- /.content -->
     </div>
+
+    <script>
+        $(document).ready(function() {
+            $('#summernote').summernote();
+        });
+    </script>
 @endsection

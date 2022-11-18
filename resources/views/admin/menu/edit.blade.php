@@ -8,12 +8,12 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1>General Form</h1>
+                        <h1>Menu Form</h1>
                     </div>
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
-                            <li class="breadcrumb-item"><a href="#">Home</a></li>
-                            <li class="breadcrumb-item active">General Form</li>
+                            <li class="breadcrumb-item"><a href="{{url('/index')}}">Home</a></li>
+                            <li class="breadcrumb-item active">Menu Form</li>
                         </ol>
                     </div>
                 </div>
@@ -33,8 +33,9 @@
                             </div>
                             <!-- /.card-header -->
                             <!-- form start -->
-                            <form action="{{route('slider.store') }}" method="post" enctype="multipart/form-data">
+                            <form action="{{route('menu.update', $data['row']->id) }}" method="post" enctype="multipart/form-data">
                                 @csrf
+                                @method('PUT')
                                 @if ($errors->any())
                                     <div class="alert alert-danger">
                                         There were some problems with your input.<br><br>
@@ -47,26 +48,16 @@
                                 @endif
                                 <div class="card-body">
                                     <div class="form-group">
-{{--                                        {{ $errors }}--}}
-                                        <label for="title">Title</label>
-                                        <input type="text" name="title" class="form-control" id="title" placeholder="Title">
+                                        <label for="menu1">Menu 1</label>
+                                        <input type="text" name="menu1" class="form-control" value="{{isset($data['row'])?$data['row']->menu1:''}}" placeholder="Menu 1">
                                     </div>
                                     <div class="form-group">
-                                        <label for="alt_text">Alt Text</label>
-                                        <input type="text" name="alt_text" class="form-control" id="alt_text" placeholder="Enter Alt Text">
+                                        <label for="menu2">Menu 2</label>
+                                        <input type="text" name="menu2" class="form-control" value="{{isset($data['row'])?$data['row']->menu2:''}}" placeholder="Menu 2">
                                     </div>
                                     <div class="form-group">
-                                        <label for="main_photo">Choose Photo</label>
-                                        <input type="file" name="main_photo" class="form-control" id="main_photo" placeholder="photo">
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label for="">Status:</label>
-                                        <select name="status">
-                                            <option value=" ">Select Status</option>
-                                            <option value="1">Active</option>
-                                            <option value="0">InActive</option>
-                                        </select>
+                                        <label for="menu3">Menu 3</label>
+                                        <input type="text" name="menu3" class="form-control"  value="{{isset($data['row'])?$data['row']->menu3:''}}" placeholder="Menu 3">
                                     </div>
                                 </div>
                                 <!-- /.card-body -->
@@ -85,4 +76,10 @@
         </section>
         <!-- /.content -->
     </div>
+
+    <script>
+        $(document).ready(function() {
+            $('#summernote').summernote();
+        });
+    </script>
 @endsection

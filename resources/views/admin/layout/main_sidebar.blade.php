@@ -55,6 +55,12 @@
                                 <p>Slider</p>
                             </a>
                         </li>
+                        <li class="nav-item {{request()->is('blog*')?'menu-open':''}}">
+                            <a href="{{url('/blog')}}" class="nav-link {{request()->is('blog*')?'active':''}}">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Blog</p>
+                            </a>
+                        </li>
                         <li class="nav-item {{request()->is('siteSetting*')?'menu-open':''}}">
                             <a href="{{url('/siteSetting')}}" class="nav-link {{request()->is('siteSetting*')?'active':''}}">
                                 <i class="far fa-circle nav-icon"></i>
