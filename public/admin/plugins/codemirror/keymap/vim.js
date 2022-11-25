@@ -4029,7 +4029,7 @@
       var firstIndex = chars.indexOf(symb);
 
       // the decision tree is to always look backwards for the beginning first,
-      // but if the cursor is in front of the first instance of the symb,
+      // but if the cursor is in frontend of the first instance of the symb,
       // then move the cursor forward
       if (cur.ch < firstIndex) {
         cur.ch = firstIndex;

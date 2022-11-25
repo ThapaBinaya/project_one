@@ -9,7 +9,7 @@
                 <div class="row mb-2">
                     <div class="col-sm-6">
                         <h1>MenuTables</h1>
-                        <a href="{{url('/menu/create')}}" class="btn btn-primary" role="button" aria-pressed="true">Create About US</a>
+                        <a href="{{url('/menu/create')}}" class="btn btn-primary" role="button" aria-pressed="true">Create Menu </a>
                     </div>
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">

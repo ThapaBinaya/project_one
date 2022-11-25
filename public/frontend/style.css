@@ -1,0 +1,655 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+body{
+    overflow-x: hidden;
+}
+
+.banner{
+    width: 100%;
+    height: 120px;
+    cursor: pointer;
+    background-color: #fff;
+}
+
+.heading{
+    display: flex;
+    justify-content: center;
+}
+
+.head .head-item{
+    line-height: 120px; 
+}
+
+.head-item2 h5{
+    color:rgb(188, 63, 63);
+    font-size: 4vmin;
+    font-weight: bolder;
+    margin-top: 30px;
+}
+.head-item2 h6{
+    color:rgb(188, 63, 63);
+    font-size: 3vmin;
+    font-weight: bolder;
+}
+
+.navbar-nav .nav-item{
+    margin: 0px 18px;
+}
+
+.navbar-nav .nav-item a{
+    font-weight: bolder;
+    color: rgb(255, 255, 255);
+}
+
+.navbar form a{
+    margin:0px 10px;
+    font-weight: bolder;
+}
+
+.dropdown-menu li {
+    position: relative;
+}
+
+.dropdown-menu .dropdown-submenu {
+    display: none;
+    position: absolute;
+    left: 100%;
+    top: -7px;
+}
+
+.dropdown-menu .dropdown-submenu-left {
+    right: 100%;
+    left: auto;
+}
+
+.dropdown-menu > li:hover > .dropdown-submenu {
+    display: block;
+}
+
+.dropdown-menu a:hover{
+    background-color: rgb(164, 9, 14);
+}
+
+
+/* --------BreadCrumb CSS--------- */
+
+.breadcrumb{
+    background-color: rgb(207, 207, 207) !important;
+    margin-bottom: 0px !important;
+}
+
+.breadcrumb .active{
+    color: rgb(188, 63, 63);
+    margin-right:60px;
+}
+.breadcrumb li{
+    font-size: 19px;
+    font-weight: bolder;
+    color: rgb(188, 63, 63) !important;
+}
+
+
+/* --------Home Page CSS--------- */
+
+.carousel .carousel-item {
+    height: 500px;
+  }
+  
+  .carousel-item img {
+      position: absolute;
+      object-fit: cover;
+      top: 0;
+      left: 0;
+      min-height: 500px;
+  }
+
+/* --------about--------- */
+
+.about-us,.social {
+    text-align: center;
+    margin: 20px auto;
+}
+
+.about-us h1, .social h1{
+    color:rgb(188, 63, 63) ;
+    margin: 20px 0px;
+    font-weight: bolder;
+    font-size: 5vmin;
+}
+
+.about-us .about-item{
+    margin: 20px 0px;
+      
+}
+
+.about-us .about-item .btn, .sahetya .btn,  .lekh .btn{
+    font-size: 2.5vmin;
+    color: #fff;
+    background-color:rgb(188, 63, 63);
+    border-radius: 30px;
+    transition: .8s;
+}
+
+.about-us .about-item .btn:hover, .sahetya .btn:hover, .lekh .btn:hover{
+    color: #fff;
+    background-color:rgb(124, 55, 55);
+    box-shadow: 2px 2px 5px rgb(62, 61, 61);
+}
+
+.samachar h1, .lekh h1, .sahetya h1{
+    font-size: 5vmin;
+    color:rgb(188, 63, 63) ;
+    margin-top: 20px;
+    margin-left: 40px;
+    font-weight: bold;
+}
+
+.desc-col .desc .read-more{
+    color:rgb(188, 63, 63);
+    font-weight: bolder;
+    transition: .5s;
+}
+
+.desc-col .desc .read-more:hover{
+    font-size: 18px;
+}
+
+ /* --------samachar--------- */
+
+
+.samachar .samachar-main{
+    padding: 25px;
+    margin:10px 0px;
+    box-shadow: 2px 2px 15px rgb(165, 169, 169);
+    transition: .5s;
+    overflow: hidden;
+}
+
+.samachar .samachar-main h2{
+    margin-top: 20px;
+}
+
+.samachar-main h2 a, .samachar-main p a{
+    color: #000;
+    text-decoration: none;
+    transition: .5s ;
+}
+    
+.samachar-main h2 a:hover, .samachar-main p a:hover{
+    color: rgb(188, 63, 63);
+}
+
+
+.small-news .samachar-item{
+    padding: 5px;
+    border-right:4px solid rgb(188, 63, 63);
+    margin:15px 0px;
+    box-shadow: 2px 2px 5px rgb(213, 217, 217);
+    overflow: hidden;
+    
+}
+
+.samachar .samachar-item img{
+    /* transition: .5s; */
+    transition: all .5s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+    transform: scale(1);
+}
+
+.samachar .samachar-item img:hover{
+    transform: scale(1.1);
+}
+
+.samachar-item h5 a{
+    color: #000;
+    text-decoration: none;
+    transition: .5s ;
+}
+
+.samachar-item h5 a:hover{
+    font-size: 22px;
+    color: rgb(188, 63, 63);
+}
+
+/* --------lekh--------- */
+
+.lekh .lekh-item{
+    padding: 20px;
+    margin: 20px ;
+    box-shadow: 2px 2px 15px rgb(183, 190, 190);
+}
+
+.lekh .lekh-item .desc-col{
+    margin-top: 15px;
+}
+
+.lekh-item .desc-col p a, .sahetya-item .desc-col p a{
+    color: #000;
+    text-decoration: none;
+    transition: .5s ;
+}
+
+.lekh-item .desc-col p a:hover, .sahetya-item .desc-col p a:hover{
+    color: rgb(188, 63, 63);
+}
+
+.see-all{
+    text-align: center;
+    margin: 5px auto;
+}
+
+/* --------Sahetya--------- */
+
+.sahetya .sahetya-item{
+    padding: 15px;
+    margin: 20px ;
+    box-shadow: 2px 2px 15px rgb(183, 190, 190);
+}
+
+.sahetya .sahetya-item .desc-col{
+    margin-top: 15px;
+}
+
+/* --------social--------- */
+.social .social-item{
+    margin: 30px 0px;
+}
+
+.social .social-item h3{
+    font-size: 4vmin;
+    margin-bottom: 30px;
+    text-decoration: underline;
+}
+footer{
+    background-color: rgb(242, 242, 242);
+}
+
+footer h3{
+    font-size: 22px;
+    color:rgb(188, 63, 63) ;
+    font-weight: bolder;
+    padding-top: 20px;
+}
+
+footer .row .footer-item ul li{
+    list-style: none;
+    padding: 5px 0px;
+}
+
+footer .row .footer-item ul li a{
+    text-decoration: none;
+    color: rgb(74, 72, 72);
+}
+
+footer .row .footer-item ul li a:hover{
+    color:rgb(188, 63, 63) ;
+}
+
+.footer-info{
+    height: 60px;
+    background-color: rgb(194, 194, 194);
+    text-align: center;
+}
+
+.footer-info p{
+    line-height: 60px;
+    font-size: 18px;
+}
+
+/* --------Update Page CSS--------- */
+ .update{
+    margin: 80px 0px;
+    box-shadow: 2px 2px 15px rgb(183, 190, 190);
+ }
+
+ .info-col{
+    background-color: rgb(240, 237, 237);
+ }
+
+ .info{
+    height: 50px;
+    background-image: linear-gradient(to right, rgb(183, 0, 0), rgb(255, 184, 184));
+ }
+
+ .info h5{
+    color: #fff;
+    line-height: 50px;
+    font-weight: bolder;
+ }
+
+ .update ul{
+    list-style: none;
+    margin: 15px;
+ }
+
+ .update ul li{
+    margin: 20px 0px;
+ }
+
+ .update .update-detail{
+    text-align: center;
+ }
+
+ .update-detail h2{
+    font-size: 3.5vmin;
+    font-weight: bold;
+ }
+
+ .update-detail p{
+    font-size:2.8vmin;
+    font-weight: 400;
+ }
+
+ .update .form-group .form-control{
+    margin-top: 20px;
+    height: 50px;
+    border: 2px solid rgb(188, 63, 63);
+    font-weight: bolder;
+ }
+
+ .update .form-group .btn-submit{
+    font-size:2.5vmin ;
+    color: rgb(188, 63, 63);
+    height: 35px;
+    transition: .5s;
+ }
+
+ .update .form-group button:hover, .form-group .btn-submit:hover{
+    color: #fff;
+    background-image: linear-gradient(to right, rgb(183, 0, 0), rgb(255, 184, 184));
+ }
+
+ /* --------Register Page CSS--------- */
+
+ .register{
+    box-shadow: 2px 2px 15px rgb(183, 190, 190);
+    padding: 10px;
+    margin: 50px auto;
+ }
+
+ .top-name{
+    text-align: center;
+    color: rgb(188, 63, 63);
+    font-weight: bold;
+ }
+
+ .preview{
+    width: 170px;
+    height: 190px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #888;
+    border-radius: 10px;
+}
+.selImage{
+    border-radius: 7px;
+    cursor: pointer;
+    background: rgb(188, 63, 63);
+    color: #fff;
+    width: 170px;
+    padding: 10px;
+    text-align: center;
+}
+.selImage:active{
+    background: #50211f;
+}
+
+.selImageSample{
+    border-radius: 7px;
+    cursor: pointer;
+    background: #fff;
+    color: #000;
+    width: 170px;
+    padding: 10px;
+    text-align: center;
+}
+.selImageSample:active{
+    background: #fff;
+}
+
+ .form-detail{
+    box-shadow: 2px 2px 15px rgb(183, 190, 190);
+    padding:10px 0px 30px 0px;
+    margin: 15px auto;
+ }
+
+ input[type="date"]:not(.has-value):before{
+    color: rgb(86, 85, 85);
+    content: attr(placeholder);
+  }
+
+ .register .form-group .form-control{
+    margin-top: 20px;
+    height: 42px;
+    border: 1px solid rgb(134, 131, 131);
+    font-weight: bolder;
+ }
+
+ .form-detail h1{
+    color: rgb(188, 63, 63);
+    font-size: 4vmin;
+ }
+ 
+ .form-detail .form-group {
+    width: 49%;
+    margin-left: 5px;
+ }
+
+ .form-detail .form-group .form-control{
+    width: 98%;
+ }
+
+ @media(max-width:768px) {
+    .form-detail .form-group {
+        width: 100%;
+     }
+
+     .form-detail .form-group .form-control{
+        width: 95%;
+     }
+
+     .register .form-group .form-control{
+        margin-top: 0px;
+     }
+ }
+
+ .register .address h5{
+    font-size: 3vmin;
+    margin-top: 15px;
+ }
+
+ .address h5{
+    display: flex;
+ }
+ .address h5 small{
+    margin-left: 15px;
+    font-size: 15px;
+ }
+
+ .previewCitizen{
+    width: 510px;
+    height: 250px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #888;
+    border-radius: 10px;
+}
+
+ .register .form-group .btn-submit, .contact-us .form-group .btn-submit{
+    width: 120px;
+    font-size:2.5vmin ;
+    color:#fff;
+    background-color: rgb(188, 63, 63);
+    height: 40px;
+    transition: .5s;
+ }
+
+/* --------Catagory Page CSS--------- */
+
+.catagory h1{
+    font-size: 4.5vmin;
+    color: rgb(188, 63, 63);
+    margin: 20px 0px;
+    font-weight: bolder;
+}
+
+.catagory .catagory-main .item-img{
+    height: 520px;
+}
+.catagory .catagory-main img{
+   max-height:98%;
+}
+
+@media(max-width:991px){
+    .catagory .catagory-main .item-img{
+        height: 430px;
+    } 
+}
+@media(max-width:767px){
+    .catagory .catagory-main .item-img{
+        height: 320px;
+    } 
+}
+
+@media(max-width:575px){
+    .catagory .catagory-main .item-img{
+        height: 280px;
+    } 
+}
+
+.catagory .catagory-item{
+    /* padding: 20px; */
+    margin: 10px 15px;
+    text-align: center;
+    box-shadow: 2px 2px 15px rgb(90, 91, 91);
+    overflow: hidden;
+    border-radius: 20px;
+    
+}
+
+.catagory-item img{
+    object-fit: fill;
+    /* border-radius: 20px; */
+    opacity: .9;
+    
+    transition: .5s;
+}
+
+.catagory-item .item-img img:hover{
+    transform: scale(1.1);
+}
+
+.catagory-item .item-heading h3{
+    margin-top: 10px;
+    transition: .5s;
+}
+
+.catagory-item .item-heading h3:hover{
+    margin-top: 15px;
+}
+
+.catagory-item .item-heading h3 a{
+    font-size: 3.5vmin;
+    color: rgb(188, 63, 63);
+    text-decoration: none;
+}
+
+/* --------Committee Page CSS--------- */
+
+.committee{
+    background-color: rgb(235, 231, 231);
+}
+
+.committee-heading h3{
+    color: rgb(188, 63, 63);
+    font-size: 4.5vmin;
+    margin: 30px 0px;
+    font-weight: bolder;
+}
+
+.committee .committee-item{
+    margin: 15px 15px;
+    background-color: #fff;
+    transition: .4s;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.committee .committee-item:hover{
+    box-shadow: 2px 2px 15px rgb(95, 97, 97);
+}
+
+.committee .committee-item h4, .committee .committee-item p{
+    margin-left: 20px;
+}
+
+/* --------Contact Page CSS--------- */
+
+.contact{
+    background-color: rgb(232, 228, 228);
+    padding: 25px 0px;
+}
+
+.contact-us .contact-heading{
+    border-left: 5px solid rgb(188, 63, 63);
+    padding: 30px 0px 10px 15px;
+}
+
+.contact-us h3{
+    font-size: 5vmin;
+    color: rgb(188, 63, 63);
+}
+
+
+.contact-us form label{
+    font-size: 2.8vmin;
+    font-weight: bolder;
+    color: rgb(101, 100, 100);
+}
+
+.contact-us .form-group{
+    width: 50%;
+    margin: 20px 0px;
+}
+
+.contact-us .textarea-group{
+    width: 100%;
+}
+.contact-us .textarea-group .textarea-control{
+    margin-top: 5px;
+    width: 98%;
+    border: 2px solid rgb(147, 145, 145);
+}
+
+.contact-us .form-group .form-control{
+    margin-top: 5px;
+    height: 40px;
+    width: 95%;
+    border: 2px solid rgb(147, 145, 145);
+}
+
+.contact-us .form-group .btn-submit{
+    width: 150px;
+    transition: .5s;
+}
+
+.contact-location h3{
+    font-size: 5vmin;
+    color: rgb(188, 63, 63);
+    margin: 30px 0px;
+}
+
+/* --------Gallery Page CSS--------- */
+
+.gallery .gallery-heading{
+    border-bottom: solid 2px #898989;
+    margin: 20px auto;
+}
+
+.gallery .gallery-heading h1{
+    color: rgb(188, 63, 63);
+    font-size: 5vmin;
+    font-weight: bolder;
+}

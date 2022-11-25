@@ -61,6 +61,18 @@
                                 <p>Blog</p>
                             </a>
                         </li>
+                        <li class="nav-item {{request()->is('menu*')?'menu-open':''}}">
+                            <a href="{{url('/menu')}}" class="nav-link {{request()->is('menu*')?'active':''}}">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Menu</p>
+                            </a>
+                        </li>
+                        <li class="nav-item {{request()->is('contact*')?'menu-open':''}}">
+                            <a href="{{url('/contact')}}" class="nav-link {{request()->is('contact*')?'active':''}}">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Contact</p>
+                            </a>
+                        </li>
                         <li class="nav-item {{request()->is('siteSetting*')?'menu-open':''}}">
                             <a href="{{url('/siteSetting')}}" class="nav-link {{request()->is('siteSetting*')?'active':''}}">
                                 <i class="far fa-circle nav-icon"></i>

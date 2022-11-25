@@ -48,15 +48,15 @@
                                 <div class="card-body">
                                     <div class="form-group">
                                         <label for="menu1">Menu 1</label>
-                                        <input type="text" name="menu1" class="form-control" id="menu1" placeholder="Menu 1">
+                                        <input type="text" name="menu1" class="form-control" placeholder="Menu 1">
                                     </div>
                                     <div class="form-group">
                                         <label for="menu2">Menu 2</label>
-                                        <input type="text" name="menu2" class="form-control" id="menu2" placeholder="Menu 2">
+                                        <input type="text" name="menu2" class="form-control" placeholder="Menu 2">
                                     </div>
                                     <div class="form-group">
-                                        <label for="menu 3">Menu 3</label>
-                                        <input type="text" name="menu 3" class="form-control" id="menu 3" placeholder="Menu 3">
+                                        <label for="menu3">Menu 3</label>
+                                        <input type="text" name="menu3" class="form-control" placeholder="Menu 3">
                                     </div>
                                 </div>
                                 <!-- /.card-body -->

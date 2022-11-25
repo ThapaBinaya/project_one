@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('about_us', function (Blueprint $table) {
             $table->id();
             $table->string('title',55);
-            $table->string('excerpt',55);
+            $table->text('excerpt')->nullable();
             $table->boolean('status')->default(0);
             $table->timestamps();
         });
